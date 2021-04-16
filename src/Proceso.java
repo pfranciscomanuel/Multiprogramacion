@@ -1,11 +1,11 @@
-import java.awt.Color;
-import javax.swing.*;
+
+import javax.swing.*;//Impoortamos el paquete para Las barras de progreso
 
 class Proceso extends Thread{
-    JProgressBar barra;
+    JProgressBar barra;//Barra de cada hilo
     
-    int tamano;
-    int i;
+    int tamano;//Tamaño de cada proceso
+    int i;//Contador
     
     //Constructor con Argumentos de la clase padre Thread y Clase Interfaz JProgressbar
     public Proceso(String nombre,JProgressBar barra){
@@ -41,6 +41,7 @@ class Proceso extends Thread{
                 // Primera entrada y salida del Proceso 1
                 if(i==5 && "Proceso 1".equals(getName())) {
                     System.out.println ("Primer Tiempo de E/S");
+                    //Mostar los cambios de las barras donde se se muestra los tiempos requeridos de la primera E/S
                     Interfaz.Etiqueta1.setText("<html>Tamaño: 20&nbsp;&nbsp&nbsp&nbsp&nbsp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Tiempo Espera: 0"
                             + " <br> E/S:  5 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp;Tiempo Ejecucion: 5"
                             + "<br> E/S: 15 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp;Tiempo Restante: 20 </html>");
@@ -53,6 +54,7 @@ class Proceso extends Thread{
                 // Segunda entrada y salida del Proceso 1
                 if(i==15 && "Proceso 1".equals(getName())) {
                     System.out.println ("Segundo Tiempo de E/S");
+                    //Mostar los cambios de las barras donde se se muestra los tiempos requeridos de la segunda E/S
                     Interfaz.Etiqueta1.setText("<html>Tamaño: 10&nbsp;&nbsp&nbsp&nbsp&nbsp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Tiempo Espera: 110"
                             + " <br> E/S: 5 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp;Tiempo Ejecucion: 10"
                             + "<br> E/S: 15 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp;Tiempo Restante: 10 </html>");
@@ -62,7 +64,7 @@ class Proceso extends Thread{
                 }
                 //Proceso Finalizado
                 if(i==25 && "Proceso 1".equals(getName())) {
-                    JOptionPane.showMessageDialog(null, "El PROCESO 1 a Finalizado");
+                    JOptionPane.showMessageDialog(null, "El PROCESO 1 ha Finalizado");
                     Interfaz.Etiqueta1.setText("Proceso Finalizado");
                     barra.setString("PROCESO FINALIZADO: 25%"); //Indicamos en la barra que el proceso a Finalizado
                     Interfaz.hilo2.resume();//Reanudamos el hilo 2 donde se quedo
@@ -96,7 +98,7 @@ class Proceso extends Thread{
                 }
                 //Proceso Finalizado
                 if(i==35 && "Proceso 2".equals(getName())){
-                    JOptionPane.showMessageDialog(null, "El PROCESO 2 a Finalizado");
+                    JOptionPane.showMessageDialog(null, "El PROCESO 2 ha Finalizado");
                     Interfaz.Etiqueta2.setText("Proceso Finalizado");
                     barra.setString("PROCESO FINALIZADO: 35%");
                     Interfaz.hilo3.resume();
@@ -128,7 +130,7 @@ class Proceso extends Thread{
                 }
                 //Proceso Finalizado
                 if(i==30 && "Proceso 3".equals(getName())){
-                    JOptionPane.showMessageDialog(null, "El PROCESO 3 a Finalizado");
+                    JOptionPane.showMessageDialog(null, "El PROCESO 3 ha Finalizado");
                     Interfaz.Etiqueta3.setText("Proceso Finalizado");
                     barra.setString("PROCESO FINALIZADO: 30%");
                     Interfaz.hilo4.resume();
@@ -161,7 +163,7 @@ class Proceso extends Thread{
                 }
                 //Proceso Finalizado
                 if(i==20 && "Proceso 4".equals(getName())){
-                    JOptionPane.showMessageDialog(null, "El PROCESO 4 a Finalizado");
+                    JOptionPane.showMessageDialog(null, "El PROCESO 4 ha Finalizado");
                     Interfaz.Etiqueta4.setText("Proceso Finalizado");
                     barra.setString("PROCESO FINALIZADO: 20%");
                     Interfaz.hilo5.resume();
@@ -193,7 +195,7 @@ class Proceso extends Thread{
                 }
                 //Proceso Finalizado
                 if(i==40 && "Proceso 5".equals(getName())){
-                    JOptionPane.showMessageDialog(null, "El PROCESO 5 a Finalizado");
+                    JOptionPane.showMessageDialog(null, "El PROCESO 5 ha Finalizado");
                     Interfaz.Etiqueta5.setText("Proceso Finalizado");
                     barra.setString("PROCESO FINALIZADO: 40%");
                     Interfaz.hilo6.resume();
@@ -225,7 +227,7 @@ class Proceso extends Thread{
                 }
                 //Proceso Finalizado
                 if(i==35 && "Proceso 6".equals(getName())){
-                    JOptionPane.showMessageDialog(null, "El PROCESO 6 a Finalizado");
+                    JOptionPane.showMessageDialog(null, "El PROCESO 6 ha Finalizado");
                     Interfaz.Etiqueta6.setText("Proceso Finalizado");
                     barra.setString("PROCESO FINALIZADO: 35%");
                     Interfaz.hilo7.resume();
@@ -257,7 +259,7 @@ class Proceso extends Thread{
                 }
                 //Proceso Finalizado
                 if(i==50 && "Proceso 7".equals(getName())){
-                    JOptionPane.showMessageDialog(null, "El PROCESO 7 a Finalizado");
+                    JOptionPane.showMessageDialog(null, "El PROCESO 7 ha Finalizado");
                     Interfaz.Etiqueta7.setText("Proceso Finalizado");
                     barra.setString("PROCESO FINALIZADO: 50%");
                     Interfaz.hilo8.resume();
@@ -289,7 +291,7 @@ class Proceso extends Thread{
                 }
                 //Proceso Finalizado
                 if(i==35 && "Proceso 8".equals(getName())){
-                    JOptionPane.showMessageDialog(null, "El PROCESO 8 a Finalizado");
+                    JOptionPane.showMessageDialog(null, "El PROCESO 8 ha Finalizado");
                     Interfaz.Etiqueta8.setText("Proceso Finalizado");
                     barra.setString("PROCESO FINALIZADO: 35%");
                     Interfaz.hilo9.resume();
@@ -322,7 +324,7 @@ class Proceso extends Thread{
                 }
                 //Proceso Finalizado
                 if(i==45 && "Proceso 9".equals(getName())){
-                    JOptionPane.showMessageDialog(null, "El PROCESO 9 a Finalizado");
+                    JOptionPane.showMessageDialog(null, "El PROCESO 9 ha Finalizado");
                     Interfaz.Etiqueta9.setText("Proceso Finalizado");
                     barra.setString("PROCESO FINALIZADO: 45%");
                     Interfaz.hilo10.resume();
@@ -355,7 +357,7 @@ class Proceso extends Thread{
                 }
                 //Proceso Finalizado
                 if(i==30 && "Proceso 10".equals(getName())){
-                    JOptionPane.showMessageDialog(null, "El PROCESO 10 a Finalizado");
+                    JOptionPane.showMessageDialog(null, "El PROCESO 10 ha Finalizado");
                     Interfaz.Etiqueta10.setText("Proceso Finalizado");
                     barra.setString("PROCESO FINALIZADO: 30%");
                     Interfaz.hilo10.interrupt();
@@ -364,7 +366,7 @@ class Proceso extends Thread{
         }//WHILE
             
             
-    }
+    }//Fin metodo run
     
     
     //Obtenemos el tamaño de cada proceso indicados en la clase Interfaz

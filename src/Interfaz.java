@@ -1,24 +1,22 @@
 
-import java.awt.*;
-import javax.swing.JOptionPane;
-import javax.swing.plaf.basic.BasicProgressBarUI;
+import java.awt.*; //Importamos el paquete para los hilos
+import javax.swing.JOptionPane;//Importamos paquete para las cajas de aviso
+import javax.swing.plaf.basic.BasicProgressBarUI;//Importamos el paquete de barras de progeso
 
 
-
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 
 /**
  *
  * @author Francisco Manuel Perez Sanchez
+ *          Sepulveda Flores Xcaret
+ *          Trejo Valerdi Carmina Monserrat
  *
  */
+
+//Clase Interfaz donde hereda de la clase Jframe es decir de nuestra ventana
 public class Interfaz extends javax.swing.JFrame {
     
-    //Creamos los 10 procesos que vamos utlizar
+    //Creamos o declaramos los 10 procesos que vamos utlizar
     public static Proceso hilo1;
     public static Proceso hilo2;
     public static Proceso hilo3;
@@ -31,6 +29,7 @@ public class Interfaz extends javax.swing.JFrame {
     public static Proceso hilo10;
     
     public Interfaz() {
+        //Metodo donde manejamos nuestras equiquetas y ventanas
         initComponents();
         //Asignamos el nombre de cada hilo y su respectiva barra;
         Interfaz.hilo1= new Proceso("Proceso 1",barraHilo1);
@@ -67,7 +66,7 @@ public class Interfaz extends javax.swing.JFrame {
         segunda10.setVisible(false);
         primer10.setVisible(false);
         
-        //Mostramos en la ventana los datos de cada proceso 
+        //Mostramos en la ventana los datos iniciales de cada proceso 
        Etiqueta1.setText("<html>Tamaño: 25 <br> E/S: 5 <br> E/S: 15 </html> ");
        Etiqueta2.setText("<html>Tamaño: 35 <br> E/S: 10 <br> E/S: 30 </html> ");
        Etiqueta3.setText("<html>Tamaño: 30 <br> E/S: 15 <br> E/S: 25 </html> ");
@@ -617,7 +616,7 @@ public class Interfaz extends javax.swing.JFrame {
 
     //Metodo del boton iniciar
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        //Asignamos los tamaños de cada proceso
+        //Asignamos los tamaños de cada proceso de la clase proceso
         hilo1.iniciar(25);
         hilo2.iniciar(35);
         hilo3.iniciar(30);
@@ -628,6 +627,7 @@ public class Interfaz extends javax.swing.JFrame {
         hilo8.iniciar(35);
         hilo9.iniciar(45);
         hilo10.iniciar(30);
+        
         hilo1.start(); //iniciamos el primer hilo de la clase Proceso
     }//GEN-LAST:event_jButton1ActionPerformed
 
@@ -641,7 +641,7 @@ public class Interfaz extends javax.swing.JFrame {
     }
     
     
-   
+   //Clase principal de la ventana y se ejecute
     public static void main(String args[]) {
         
         java.awt.EventQueue.invokeLater(new Runnable() {

@@ -29,7 +29,7 @@ public class Portada extends javax.swing.JFrame {
     
     @Override
     public Image getIconImage(){
-        //Imagenes que nos ayuda a la presentacion de nuestr
+        //Imagenes que nos ayuda a la presentacion de nuestra
         Image retValue= Toolkit.getDefaultToolkit().getImage(ClassLoader.getSystemResource("Itp.png"));
         return retValue;
     }
